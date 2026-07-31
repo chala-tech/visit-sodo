@@ -1,0 +1,378 @@
+
+:root {
+  /* Colors */
+  --color-forest: #2F4A3C;   
+  --color-gold:   #C89B3C;   
+  --color-clay:   #B4622B;   
+  --color-cream:  #F6F1E7;   
+  --color-ink:    #201C16;  
+  --color-cream-soft: #FBF8F2;
+
+  /* Typography */
+  --font-display: 'Fraunces', serif;      
+  --font-body: 'Work Sans', sans-serif;   
+
+  /* Spacing scale  */
+  --space-sm: 1rem;
+  --space-md: 2rem;
+  --space-lg: 4rem;
+  --space-xl: 6rem;
+}
+
+/*RESET*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; 
+}
+
+body {
+  font-family: var(--font-body);
+  color: var(--color-ink);
+  background: var(--color-cream);
+  line-height: 1.6;
+  display: flex;
+  flex-direction: column;
+  position: relative; 
+}
+
+img {
+  max-width: 100%;   
+  display: block;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+h1, h2, h3 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  line-height: 1.15;
+}
+
+
+.section-eyebrow {
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-clay);
+  margin-bottom: var(--space-sm);
+}
+.section-eyebrow--light {
+  color: var(--color-gold); 
+}
+
+/*  BUTTONS*/
+.btn {
+  display: inline-block;
+  padding: 0.9rem 2rem;
+  border-radius: 999px; 
+  font-weight: 600;
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.btn--primary {
+  background: var(--color-gold);
+  color: var(--color-ink);
+  position: relative;
+  left: 80%;
+  transform: translateX(-10%);
+}
+.btn--primary:hover {
+  background: var(--color-clay);
+  color: var(--color-cream);
+  transform: translateY(-2px); 
+}
+
+/* 
+   NAVIGATION
+ */
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 100; 
+  background: var(--color-forest);
+  height: 60px;
+  
+}
+
+.nav__inner {
+  max-width: 1100px;
+  margin: 0 auto; 
+  padding: 1rem var(--space-md);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav__logo {
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--color-cream);
+}
+
+.nav__links {
+  display: flex;
+  gap: var(--space-md);
+  list-style: none;
+}
+
+.nav__links a {
+  color: var(--color-cream);
+  font-size: 0.95rem;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+.nav__links a:hover {
+  color: var(--color-gold);
+}
+
+/*
+   HERO SECTION
+    */
+.hero {
+  min-height: 90vh; 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: var(--space-md);
+
+  
+  background:
+    linear-gradient(rgba(32, 28, 22, 0.55), rgba(32, 28, 22, 0.55)),
+    url("images/hero-background.jpg") center/cover no-repeat;
+}
+
+.hero__content {
+  max-width: 640px;
+  color: var(--color-cream);
+}
+
+.hero__title {
+  font-size: clamp(2.75rem, 6vw, 4.5rem); 
+  margin-bottom: var(--space-sm);
+}
+
+.hero__subtitle {
+  font-size: 1.1rem;
+  margin-bottom: var(--space-md);
+  opacity: 0.9;
+}
+
+/*
+   WELCOME SECTION
+ */
+.welcome {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: var(--space-xl) var(--space-md);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-lg);
+  align-items: center;
+}
+
+.welcome__text h2 {
+  font-size: 2rem;
+  margin-bottom: var(--space-sm);
+}
+
+.welcome__image img {
+  border-radius: 12px;
+}
+
+/* 
+   EXPLORE SECTION 
+    */
+.explore {
+  background: var(--color-forest);
+  color: var(--color-cream);
+  padding: var(--space-xl) var(--space-md);
+  text-align: center;
+}
+
+.explore__heading {
+  font-size: 2rem;
+  color: var(--color-cream);
+  max-width: 500px;
+  margin: 0 auto var(--space-lg);
+}
+
+.stops {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); 
+  gap: var(--space-md);
+  text-align: left;
+}
+
+.stop {
+  background: var(--color-cream-soft);
+  color: var(--color-ink);
+  border-radius: 12px;
+  overflow: hidden; 
+  position: relative;
+}
+
+.stop__number {
+  position: absolute;
+  top: 0.75rem;
+  left: 0.75rem;
+  background: var(--color-gold);
+  color: var(--color-ink);
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.9rem;
+  width: 2.2rem;
+  height: 2.2rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2; 
+}
+
+.stop__image {
+  width: 100%;
+  height: 160px;
+  object-fit: cover; 
+}
+
+.stop__title {
+  font-size: 1.1rem;
+  padding: 1rem 1rem 0.25rem;
+}
+
+.stop__text {
+  font-size: 0.9rem;
+  padding: 0 1rem 1.25rem;
+  color: #4a453d;
+}
+
+/*
+   CULTURE STRIP
+   */
+.culture {
+  min-height: 50vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: var(--space-md);
+
+
+  background:
+    linear-gradient(rgba(47, 74, 60, 0.75), rgba(47, 74, 60, 0.75)),
+    url("images/culture-band.jpg") center/cover no-repeat;
+}
+
+.culture__overlay {
+  max-width: 600px;
+  color: var(--color-cream);
+}
+
+.culture__overlay h2 {
+  font-size: 1.9rem;
+  margin-bottom: var(--space-sm);
+}
+
+/* 
+   PLAN YOUR VISIT SECTION
+   */
+.plan {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: var(--space-xl) var(--space-md);
+}
+
+.plan__heading {
+  font-size: 2rem;
+  margin-bottom: var(--space-lg);
+  max-width: 500px;
+}
+
+.plan__grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); 
+  gap: var(--space-md);
+}
+
+.plan__card {
+  background: var(--color-cream-soft);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 12px;
+  padding: var(--space-md);
+}
+
+.plan__card h3 {
+  font-size: 1.15rem;
+  color: var(--color-forest);
+  margin-bottom: 0.5rem;
+}
+
+.plan__card p {
+  font-size: 0.95rem;
+  color: #4a453d;
+}
+
+/* 
+   FOOTER
+ */
+.footer {
+  background: var(--color-ink);
+  color: var(--color-cream);
+  text-align: center;
+  padding: var(--space-lg) var(--space-md);
+}
+
+.footer__title {
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+  margin-bottom: 0.5rem;
+}
+
+.footer__text {
+  opacity: 0.8;
+  margin-bottom: var(--space-md);
+  font-size: 0.9rem;
+}
+
+.footer__copy {
+  font-size: 0.8rem;
+  opacity: 0.6;
+}
+
+/* 
+   RESPONSIVE — smaller screens
+ */
+@media (max-width: 900px) {
+  .welcome {
+    grid-template-columns: 1fr; 
+  }
+
+  .stops {
+    grid-template-columns: repeat(2, 1fr); 
+  }
+
+  .plan__grid {
+    grid-template-columns: 1fr; 
+  }
+}
+
+@media (max-width: 600px) {
+  .nav__links {
+    gap: var(--space-sm);
+    font-size: 0.85rem;
+  }
+
+  .stops {
+    grid-template-columns: 1fr; 
+  }
+}
